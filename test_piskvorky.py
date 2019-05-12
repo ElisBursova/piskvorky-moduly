@@ -1,12 +1,7 @@
-def vyhodnot(gameboard):
-    if "xxx" in gameboard:
-        return "x"
-    elif "ooo" in gameboard:
-        return "o"
-    elif "-" not in gameboard:
-        return "!"
-    else:
-        return "-"
+import piskvorky
 
-def test_vyhodnot(gameboard, pozice):
-    assert vyhodnot("xxx") == "x"
+def test_vyhodnot():
+    assert piskvorky.vyhodnot("xxx") == "x"
+    assert piskvorky.vyhodnot("--------------") == "-"
+    assert piskvorky.vyhodnot("ooo") == "o"
+    assert piskvorky.vyhodnot("----x--o---x--oo----") == "-"
